@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Midscene 测试报告 - 运行 #93</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f7fa; color: #333; line-height: 1.6; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 40px; border-radius: 12px; margin-bottom: 24px; }
+        .header h1 { font-size: 2em; margin-bottom: 8px; }
+        .header .meta { opacity: 0.9; font-size: 0.9em; }
+        .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 24px; }
+        .stat-card { background: white; padding: 24px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        .stat-card .label { color: #666; font-size: 0.85em; text-transform: uppercase; letter-spacing: 0.5px; }
+        .stat-card .value { font-size: 2.5em; font-weight: bold; margin-top: 8px; }
+        .stat-card.pass .value { color: #10b981; }
+        .stat-card.fail .value { color: #ef4444; }
+        .stat-card.total .value { color: #6366f1; }
+        .results { background: white; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); overflow: hidden; }
+        .results-header { padding: 20px 24px; border-bottom: 1px solid #e5e7eb; font-weight: 600; font-size: 1.1em; }
+        .result-card { padding: 20px 24px; border-bottom: 1px solid #f3f4f6; }
+        .result-card:last-child { border-bottom: none; }
+        .result-card.success { border-left: 4px solid #10b981; }
+        .result-card.failure { border-left: 4px solid #ef4444; }
+        .result-card.pending { border-left: 4px solid #9ca3af; }
+        .result-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+        .case-id { font-family: monospace; font-weight: 600; color: #6366f1; }
+        .status-badge { padding: 4px 12px; border-radius: 20px; font-size: 0.8em; font-weight: 500; }
+        .status-badge.success { background: #d1fae5; color: #065f46; }
+        .status-badge.failure { background: #fee2e2; color: #991b1b; }
+        .status-badge.pending { background: #f3f4f6; color: #6b7280; }
+        .result-title { font-size: 1em; color: #374151; }
+        .result-meta { font-size: 0.85em; color: #9ca3af; margin-top: 4px; }
+        .error-message { margin-top: 12px; padding: 12px; background: #fef2f2; border-radius: 6px; color: #991b1b; font-size: 0.9em; }
+        .footer { text-align: center; padding: 24px; color: #9ca3af; font-size: 0.85em; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🤖 Midscene 测试报告</h1>
+            <div class="meta">
+                运行 ID: #93 | 
+                状态: running | 
+                开始时间: 2026-01-30T08:23:27.072571+00:00 | 
+                耗时: 0.0s
+            </div>
+        </div>
+        
+        <div class="stats">
+            <div class="stat-card total">
+                <div class="label">总用例数</div>
+                <div class="value">3</div>
+            </div>
+            <div class="stat-card pass">
+                <div class="label">通过</div>
+                <div class="value">0</div>
+            </div>
+            <div class="stat-card fail">
+                <div class="label">失败</div>
+                <div class="value">3</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">通过率</div>
+                <div class="value">0.0%</div>
+            </div>
+        </div>
+        
+        <div class="results">
+            <div class="results-header">📋 测试结果详情</div>
+            
+            <div class="result-card failure">
+                <div class="result-header">
+                    <span class="case-id">TV_shandong_test_001</span>
+                    <span class="status-badge failure">❌ 失败</span>
+                </div>
+                <div class="result-title">验证"看电视"首页视频小窗播放+免费专区返回键功能正常</div>
+                <div class="result-meta">耗时: 203.7s</div>
+                <div class="error-message">AI action failed: 3 validation errors for LocateResponse
+elements
+  Field required [type=missing, input_value={'error': '1 validation e...n    "errors": null\n}'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+reasoning
+  Field required [type=missing, input_value={'error': '1 validation e...n    "errors": null\n}'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+confidence
+  Field required [type=missing, input_value={'error': '1 validation e...n    "errors": null\n}'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing</div>
+            </div>
+            
+            <div class="result-card failure">
+                <div class="result-header">
+                    <span class="case-id">TV_shandong_test_002</span>
+                    <span class="status-badge failure">❌ 失败</span>
+                </div>
+                <div class="result-title">验证"看电视"首页视频小窗播放+电视剧播放正常</div>
+                <div class="result-meta">耗时: 237.7s</div>
+                <div class="error-message">Assertion failed: 已成功进入影视专区页面。
+
+Reason: 当前页面为CCTV-1节目播放界面，无影视专区的相关界面元素（如影视分类、推荐列表等），未进入影视专区。</div>
+            </div>
+            
+            <div class="result-card failure">
+                <div class="result-header">
+                    <span class="case-id">TV_shandong_test_003</span>
+                    <span class="status-badge failure">❌ 失败</span>
+                </div>
+                <div class="result-title">验证电视剧播放正常+首页按钮返回正常</div>
+                <div class="result-meta">耗时: 12.7s</div>
+                <div class="error-message">Assertion failed: 当前页面有电视剧集数列表，焦点在某个集数上
+Reason: 当前页面是电视剧播放画面，没有电视剧集数列表，也无焦点在集数上的状态</div>
+            </div>
+            
+        </div>
+        
+        <div class="footer">
+            Generated by Midscene AI Workflow Platform | 2026-01-30 16:31:02
+        </div>
+    </div>
+</body>
+</html>
+        
