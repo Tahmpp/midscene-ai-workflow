@@ -1,20 +1,23 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# 项目文档说明
 
-# Run and deploy your AI Studio app
+本目录包含与交付物对应的四份文档（Markdown 格式）：
 
-This contains everything you need to run your app locally.
+| 文档 | 说明 |
+|------|------|
+| [01-部署文档.md](01-部署文档.md) | 环境要求、后端/前端部署步骤、环境变量、生产注意事项 |
+| [02-API文档.md](02-API文档.md) | 全部 REST API 与 SSE 接口说明、请求/响应、数据模型摘要 |
+| [03-用户手册.md](03-用户手册.md) | 面向最终用户的功能说明与操作流程 |
+| [04-数据库设计文档.md](04-数据库设计文档.md) | 表结构、字段说明、实体关系、迁移与配置 |
 
-View your app in AI Studio: https://ai.studio/apps/temp/1
+## 转为 Word（.docx）提交
 
-## Run Locally
+若需与同事一样提交 .docx 格式，可任选其一：
 
-**Prerequisites:**  Node.js
-
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+1. **Microsoft Word**：用 Word 打开对应 `.md` 文件，另存为 `.docx`。
+2. **Pandoc**（推荐，格式更好）：
+   ```bash
+   pandoc 01-部署文档.md -o 01-部署文档.docx
+   pandoc 02-API文档.md -o 02-API文档.docx
+   pandoc 03-用户手册.md -o 03-用户手册.docx
+   pandoc 04-数据库设计文档.md -o 04-数据库设计文档.docx
+   ```
